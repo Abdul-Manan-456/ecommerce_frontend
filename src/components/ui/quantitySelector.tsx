@@ -4,7 +4,7 @@ import React, { useState } from "react"
 interface Props {
     product?: object,
     quantity?: number,
-    id: string | undefined
+    id?: string | undefined
 }
 const QuantitySelector: React.FC<Props> = ({ quantity, id }) => {
     const dispatch = useAppDispatch()
