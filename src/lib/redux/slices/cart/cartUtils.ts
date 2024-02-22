@@ -8,7 +8,7 @@ export function getCartFromLocalStorage() {
     }
 }
 export function findItemIndexById(items: CartItem[], id: string) {
-    return items.findIndex((item) => item.id === id);
+    return items.findIndex((item) => item._id === id);
 }
 // function updateCartItemQuantity(item, quantity) {
 //     return { ...item, quantity };
@@ -23,10 +23,10 @@ export const setCartItems = (payload: CartItem) => {
     const getCart = localStorage.getItem("cart");
     if (getCart) {
         const parsedCart: CartItem[] = JSON.parse(getCart);
-        const item = parsedCart.find((item) => item.id === payload.id); // finding the particular product
+        const item = parsedCart.find((item) => item._id === payload._id); // finding the particular product
         if (item) {
             // if the product exists
-            const filterdCart = parsedCart.filter((value) => value.id !== payload.id);
+            const filterdCart = parsedCart.filter((value) => value._id !== payload._id);
             item.quantity += 1;
             localStorage.removeItem("cart");
             filterdCart.push(item);
