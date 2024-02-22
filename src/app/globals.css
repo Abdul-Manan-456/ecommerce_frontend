@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+    --ghostWhite : rgb(248, 248, 255);
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+ 
+    --primary: 24 9.8% 10%;
+    --primary-foreground: 60 9.1% 97.8%;
+ 
+    /* --secondary:#292524; */
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+    --success-background : #008060;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.24);
+    --tw-shadow-colored: 0px 0px 12px 0px var(--tw-shadow-color);
+    --tw-ring-shadow: 0 0 #0000;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 20 14.3% 4.1%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+ 
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+ 
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+ 
+    --primary: 60 9.1% 97.8%;
+    --primary-foreground: 24 9.8% 10%;
+ 
+    --secondary: 12 6.5% 15.1%;
+    --secondary-foreground: 60 9.1% 97.8%;
+ 
+    --muted: 12 6.5% 15.1%;
+    --muted-foreground: 24 5.4% 63.9%;
+ 
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 60 9.1% 97.8%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+ 
+    --border: 12 6.5% 15.1%;
+    --input: 12 6.5% 15.1%;
+    --ring: 24 5.7% 82.9%;
+    
+  }
+}
+
+.card_shadow:hover {
+  
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.box_shadow {
+  box-shadow: 0.5px 1px 4px -3px;
+}
+.bottom_shadow {
+  box-shadow: 0 1px 6px -4px rgb(0, 0, 0);
+}
+.custom_scrollbar::-webkit-scrollbar {
+  width: 3px;
+}
+
+.custom_scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgb(50,50,50);
+  border-radius: 3px;
+  display: none;
+}
+
+.custom_scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: rgb(50,50,50);
+  border-radius: 3px;
+  display: block;
+}
+.custom_scrollbar::-webkit-scrollbar-track {
+  background-color: none;
+  border-radius: 6px;
+}
+
+
+/*  ----------- CSS FOR LOADING COMPONENT ------------ */
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #656363;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
