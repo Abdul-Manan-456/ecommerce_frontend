@@ -25,7 +25,7 @@ interface ProductProps {
     error: null | string | undefined
     isLoading: boolean
     products: any[]
-    selectedProduct: null | { title: string, price: number, id: string, description: string }
+    selectedProduct: null | { title: string, price: number, _id: string, description: string }
 }
 const initialState: ProductProps = {
     products: [],
@@ -38,9 +38,6 @@ const productSlice = createSlice({
     initialState,
     reducers: {
         GET_PRODUCT_BY_ID: (state, action) => {
-            console.log("action.payload", action.payload)
-            // const productId = action.payload.id;
-            // const product = state.products.find(product => product.id === productId);
             state.selectedProduct = action.payload || null;
         },
     },

@@ -48,9 +48,9 @@ const CartDetails = () => {
                                         <div className=" ml-3 flex flex-col items-start justify-between  ">
                                             <Heading as="h6">{product?.title}</Heading>
 
-                                            <QuantitySelector id={product.id} quantity={product.quantity} />
+                                            <QuantitySelector _id={product._id} quantity={product.quantity} />
 
-                                            <Trash onClick={() => dispatch(REMOVE_FROM_CART({ id: product.id }))} className="text-xl cursor-pointer font-extralight" />
+                                            <Trash onClick={() => dispatch(REMOVE_FROM_CART({ _id: product._id }))} className="text-xl cursor-pointer font-extralight" />
                                         </div>
                                     </div>
                                 </TableCell>

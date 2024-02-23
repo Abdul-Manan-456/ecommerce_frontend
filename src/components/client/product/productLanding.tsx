@@ -6,7 +6,6 @@ import React, { useEffect } from "react";
 import { fetchProducts } from "@/lib/redux/slices/productSlice";
 import LoadingComp from "@/components/ui/custom/loadingComp";
 interface Product {
-    // id: number;
     // title: string;
     // description: string;
     // price: number;

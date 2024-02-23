@@ -65,7 +65,7 @@ export const cartSlice = createSlice({
     },
     INCREMENT: (state, action) => {
       const cart = getCartFromLocalStorage();
-      const itemId = action.payload.id;
+      const itemId = action.payload._id;
 
       const itemIndex = findItemIndexById(cart, itemId);
 
@@ -109,7 +109,7 @@ export const cartSlice = createSlice({
     },
     DECREMENT: (state, action) => {
       const cart = getCartFromLocalStorage();
-      const itemId = action.payload.id;
+      const itemId = action.payload._id;
 
       const itemIndex = findItemIndexById(cart, itemId);
 
@@ -126,7 +126,7 @@ export const cartSlice = createSlice({
     },
     REMOVE_FROM_CART: (state, action) => {
       const cart = getCartFromLocalStorage();
-      const itemId = action.payload.id;
+      const itemId = action.payload._id;
       const itemIndex = findItemIndexById(cart, itemId);
 
       if (itemIndex != -1) {

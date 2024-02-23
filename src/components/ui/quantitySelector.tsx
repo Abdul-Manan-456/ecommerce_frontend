@@ -4,18 +4,18 @@ import React, { useState } from "react"
 interface Props {
     product?: object,
     quantity?: number,
-    id?: string | undefined
+    _id?: string | undefined
 }
-const QuantitySelector: React.FC<Props> = ({ quantity, id }) => {
+const QuantitySelector: React.FC<Props> = ({ quantity, _id }) => {
     const dispatch = useAppDispatch()
     const [value, setValue] = useState(quantity || 1);
     const handleIncrement = () => {
         setValue(value + 1);
-        dispatch(INCREMENT({ id: id }))
+        dispatch(INCREMENT({ _id: _id }))
     }
     const handleDecrement = () => {
         if (value > 1) setValue(value - 1);
-        dispatch(DECREMENT({ id: id }))
+        dispatch(DECREMENT({ _id: _id }))
     }
     return (
         <div className="font-medium grid grid-cols-4 h-8 place-items-center select-none rounded-full w-28 border">
