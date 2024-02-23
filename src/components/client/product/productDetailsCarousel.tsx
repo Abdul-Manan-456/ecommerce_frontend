@@ -31,6 +31,7 @@ const ProductDetailsCarousel = () => {
         },
         [api]
     );
+
     useEffect(() => {
         if (!api) {
             return;
