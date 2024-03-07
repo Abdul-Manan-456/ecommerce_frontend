@@ -1,7 +1,7 @@
 'use client'
 
 
-import Auth from "@/components/client/auth/auth"
+import Auth from "@/components/auth/auth"
 import { Suspense } from "react"
 import Loading from "./loading"
 

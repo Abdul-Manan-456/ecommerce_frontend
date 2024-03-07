@@ -10,24 +10,25 @@ interface FilterProdutsProps {
 
 const PriceFilter: React.FC<FilterProdutsProps> = ({ handleFilterValue }) => {
     const [priceRange, setPriceRange] = useState<number[]>([0, 1000]);
+
     return (
         <div className="mt-3 mb-8">
             <div className="items-center">
-                <Heading as="h5" className="">
+                <Heading as="h5" className="text-gray-600 ">
                     Price
                 </Heading>
-                <Separator className="bg-black h-[2px] w-10 mt-1" />
+                <Separator className="bg-gray-600 h-[1px] w-10 mt-1" />
             </div>
             <div className="w-full flex flex-col items-center my-4">
                 <div className="flex items-center justify-center w-full">
                     <Slider
-                        defaultValue={[0, 1000]}
-                        max={1000}
+                        defaultValue={[0, 5000]}
+                        max={5000}
                         onValueChange={(value) => {
                             setPriceRange(value);
                         }}
                         className="cursor-pointer w-[80%]"
-                        step={50}
+                        step={100}
                     />
                 </div>
                 <div className="flex w-[80%] justify-between">

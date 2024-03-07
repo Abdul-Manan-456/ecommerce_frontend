@@ -5,17 +5,14 @@ import { Suspense, useEffect } from "react";
 import Loading from "./loading";
 import { useAppDispatch } from "@/lib/redux/hooks";
 import axios from "axios";
+import { GET_CART_ITEMS } from "@/lib/redux/slices/client/cart/cartSlice";
 
 // -------------  HOME ------------------------
 export default function Home() {
+  const dispatch = useAppDispatch();
   useEffect(() => {
-    const cart = localStorage.getItem("cart");
-    async () => {
-      // const response = axios.get("https://ecommerce-backend-j8v696v1w-abdul-manan-456s-projects.vercel.app/api/v1/product")
-      // console.log("response---------", response)
-    }
-
-  }, [])
+    dispatch(GET_CART_ITEMS());
+  }, [dispatch])
   return (
     <main className="">
       <Suspense fallback={<Loading />}>

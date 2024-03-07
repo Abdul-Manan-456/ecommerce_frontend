@@ -1,40 +1,64 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import ShoppingCart from "../../../../public/icons/Cart";
 import Person from "../../../../public/icons/Person";
 import Search from "./search";
-import { useAppSelector } from "@/lib/redux/hooks";
+import { useAppDispatch, useAppSelector } from "@/lib/redux/hooks";
+import { fetchCategoryApi } from "@/lib/redux/slices/category/categoryApi";
 
 
-const navItems = [
-    {
-        path: "/",
-        name: "Home",
-    },
-    {
-        path: "/collections/men's clothing",
-        name: "Men",
-    },
-    {
-        path: "/collections/women's clothing",
-        name: "Women",
-    },
-    {
-        path: "/collections/jewelery",
-        name: "Jewelery",
-    },
-    {
-        path: "/collections/electronics",
-        name: "Electronics",
-    },
-];
+// const navItems = [
+//     {
+//         path: "/",
+//         name: "Home",
+//     },
+//     {
+//         path: "/collections/men's clothing",
+//         name: "Men's Clothing",
+//     },
+//     {
+//         path: "/collections/women's clothing",
+//         name: "Women's Clothing",
+//     },
+//     {
+//         path: "/collections/jewelery",
+//         name: "Jewelery",
+//     },
+//     {
+//         path: "/collections/accessories",
+//         name: "Accessories",
+//     },
+//     {
+//         path: "/collections/glasses",
+//         name: "Glasses",
+//     },
+//     {
+//         path: "/collections/women's bag",
+//         name: "Women's Bag",
+//     },
+// ];
+
 
 export default function NavBar() {
+
     const { totalQuantity } = useAppSelector((state) => state.cart)
+
+    // ------------- Getting the NavItems --------------------
+    const { category } = useAppSelector((state) => state.category);
+    const navItems = category && category.map((item) => ({
+        path: `/collections/${item.category}`,
+        name: `${item.category}`
+    }))
+    // --------- Putting at first ------------
+    navItems.unshift({ path: '/', name: 'home' })
+    const dispatch = useAppDispatch();
+    useEffect(() => {
+        dispatch(fetchCategoryApi());
+    }, [dispatch])
     let pathname = usePathname() || "/";
     const deCodedPath = decodeURIComponent(pathname)
 
@@ -57,11 +81,11 @@ export default function NavBar() {
                                 href={item.path}
                                 onClick={() => setClicked(item.path)}
                             >
-                                <span>{item.name}</span>
+                                <span className="capitalize">{item.name}</span>
                                 {item.path === deCodedPath && (
                                     <motion.div
                                         className="absolute left-0 top-0  h-full bg-stone-800/80 rounded-none -z-10"
-                                        // layoutId="absolute"
+
                                         aria-hidden="true"
                                         style={{
                                             width: "100%",

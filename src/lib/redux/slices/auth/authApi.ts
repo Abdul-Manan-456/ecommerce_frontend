@@ -13,11 +13,13 @@ export const login = createAsyncThunk(
 
         try {
             const response = await axios.post(`${baseUrl}/auth/login`, credentials)
-            console.log("response", response)
             return response
         } catch (err: any) {
-            console.log("error from login api", err.message)
-            return thunkAPI.rejectWithValue(err.message)
+            console.log("error from login api", err)
+            return thunkAPI.rejectWithValue({
+                message: err.message,
+                statusCode: err.response?.status
+            })
         }
     }
 )

@@ -6,15 +6,21 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 import { useAppSelector } from "@/lib/redux/hooks"
+import React from "react"
 
-
-const AccordionProduct = () => {
-    const { selectedProduct } = useAppSelector((state) => state.products)
+interface AccordionProps {
+    selectedProduct: {
+        // imageData: []
+        description: string
+    }
+}
+const AccordionProduct: React.FC<AccordionProps> = ({ selectedProduct }) => {
+    // const { selectedProduct } = useAppSelector((state) => state.products)
     return (
         <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
                 <AccordionTrigger>Description</AccordionTrigger>
-                <AccordionContent>
+                <AccordionContent className="capitalize">
                     {selectedProduct?.description}
                 </AccordionContent>
             </AccordionItem>

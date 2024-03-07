@@ -13,6 +13,7 @@ import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 
 export function CarouselLanding() {
+
     const images = [
         { img: "/images/carousel/c_1.jpg" },
         { img: "/images/carousel/c_2.jpg" },
@@ -49,16 +50,16 @@ export function CarouselLanding() {
                 setApi={setApi}
                 className="w-full h-landingCarousel "
             >
-                <CarouselContent>
+                <CarouselContent className="">
                     {images.map((image, index) => (
                         <CarouselItem key={index}>
                             <Card className="h-landingCarousel flex border-none items-center justify-center rounded-none">
                                 <CardContent className="p-0 w-full h-full">
                                     <Image
                                         src={image.img}
-                                        height={0}
-                                        width={0}
-                                        sizes="100vh"
+                                        height={2000}
+                                        width={5000}
+                                        // sizes="100vh"
                                         style={{ width: "100%", height: "100%" }}
                                         alt=""
                                     />
@@ -84,4 +85,5 @@ export function CarouselLanding() {
             </div>
         </div>
     );
+
 }
