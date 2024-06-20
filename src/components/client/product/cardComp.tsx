@@ -58,21 +58,21 @@ const CardComp: React.FC<CardProps> = ({ param, products }) => {
       <Heading as="h2" className="text-center mb-12 capitalize">
         {param}
       </Heading>
-      <div className="flex items-center justify-between mt-4 mb-12">
+      <div className="flex items-center justify-between mt-4 mb-12 px-2">
         <FilterProducts handleFilterValue={handleFilterValue} />
         <Sorting handleSortValue={handleSortValue} />
       </div>
-      <div className="grid grid-cols-4 w-full gap-12">
+      <div className="grid md:grid-cols-4 grid-cols-2 w-full md:gap-6 gap-4">
         {
           sortedProducts.map((product, index) => (
             <Card
               key={index}
-              className="border-none group relative rounded-none h-[460px] "
+              className="border-none group relative rounded-none"
             >
               <CardContent className="h-full p-0">
                 <div
                   onClick={() => dispatch(GET_PRODUCT_BY_ID(product))}
-                  className="h-[375px] overflow-hidden relative cursor-pointer"
+                  className="overflow-hidden relative cursor-pointer"
                 >
                   <Link
                     href={`/collections/${param}/product_details/${product._id}`}
@@ -90,11 +90,11 @@ const CardComp: React.FC<CardProps> = ({ param, products }) => {
                 <div className="">
                   <Heading
                     as="h5"
-                    className="p-0 m-0 line-clamp-2 h-14 overflow-hidden text-base capitalize"
+                    className="p-0 m-0 line-clamp-2 md:h-14 h-10 overflow-hidden md:text-base text-sm capitalize"
                   >
                     {product?.title}
                   </Heading>
-                  <Text as="p" className="text-base font-medium">
+                  <Text as="p" className="md:text-base text-sm font-medium">
                     Rs. {product?.price}
                   </Text>
                 </div>

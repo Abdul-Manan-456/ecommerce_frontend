@@ -50,7 +50,7 @@ const Page: React.FC<PageProps> = () => {
         fetchSearch();
     }, [decodedParam]);
     return (
-        <div className="p-4 mb-8  ">
+        <div className="p-4 mb-8 container ">
             <Suspense fallback={<Loading />}>
                 <Text as="p" className="text-xs">
                     Home / men

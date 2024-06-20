@@ -25,7 +25,7 @@ const Page = () => {
     // }, [statusCode, message, toast])
     const dispatch = useAppDispatch();
     return (
-        <div className="px-24 py-8 bg-ghostWhite ">
+        <div className="container px-24 py-8 bg-ghostWhite ">
             <Suspense fallback={<Loading />}>
                 <Accordion
                     type="multiple"

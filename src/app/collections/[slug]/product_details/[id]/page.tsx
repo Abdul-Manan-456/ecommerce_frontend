@@ -44,7 +44,7 @@ const Page = () => {
   };
 
   return (
-    <section>
+    <section className="container">
       {/* <div>Home/men/shoes/Product_details</div> */}
       <Suspense fallback={<Loading />}>
         <div className="grid grid-cols-2 gap-8 p-4">

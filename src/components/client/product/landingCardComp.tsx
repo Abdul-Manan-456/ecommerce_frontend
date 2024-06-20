@@ -23,17 +23,17 @@ const LandCardComp: React.FC<CardProps> = ({ separatedCategories }) => {
     ? Object.entries(separatedCategories)
     : [];
   return (
-    <div>
+    <div className="">
       {categories.map(([category, products], index) => (
-        <div key={category}>
-          <Heading as="h2" className="text-center pt-12 mb-12 capitalize">
+        <div className="" key={category}>
+          <Heading as="h2" className="text-center pt-12 mb-12 capitalize ">
             {category}
           </Heading>
-          <div className="grid grid-cols-4 w-full gap-12">
+          <div className="grid md:grid-cols-4 grid-cols-2 gap-x-4 w-full lg:gap-x-6 gap-y-12  md:gap-x-6 ">
             {products.map((product, index) => (
               <Card
                 key={index}
-                className="border-none group relative rounded-none h-[450px] "
+                className="group relative rounded-none max-h-[480px] "
               >
                 <CardContent className="h-full p-0">
                   <Link
@@ -41,13 +41,11 @@ const LandCardComp: React.FC<CardProps> = ({ separatedCategories }) => {
                     href={`/collections/${category}/product_details/${product._id}`}
                   >
 
-                    <div className="h-[354px] overflow-hidden relative cursor-pointer">
+                    <div className="border-none max-h-[380px] overflow-hidden relative cursor-pointer ">
                       <Image
                         src={product.imageData[0]}
-                        // loader={<LoadingComp />}
                         width={500}
                         height={700}
-                        // fill={true}
                         sizes="100vw"
                         className={`transition h-auto duration-300 ease-in-out hover:scale-110`}
                         alt=""
@@ -55,14 +53,14 @@ const LandCardComp: React.FC<CardProps> = ({ separatedCategories }) => {
                     </div>
                   </Link>
 
-                  <div className="overflow-hidden">
+                  <div className="overflow-hidden px-1">
                     <Heading
                       as="h3"
-                      className="p-0 m-0 font-bold text-base capitalize h-14 line-clamp-2 overflow-hidden pt-2"
+                      className="p-0 m-0 font-bold sm:text-base text-sm capitalize h-12 sm:h-14 line-clamp-2 overflow-hidden pt-2"
                     >
                       {product?.title}
                     </Heading>
-                    <Text as="p" className="text-base font-medium pt-2">
+                    <Text as="p" className="sm:text-base text-sm sm:font-medium font-bold pt-2">
                       Rs. {product?.price}
                     </Text>
                   </div>

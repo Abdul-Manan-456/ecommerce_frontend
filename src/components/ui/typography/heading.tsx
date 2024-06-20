@@ -20,7 +20,7 @@ const Heading = ({
             );
         case "h2":
             return (
-                <h2 className={`${baseClassName} border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 ${className}`}>
+                <h2 className={`${baseClassName} border-b pb-2 lg:text-3xl md:text-xl text-lg font-semibold tracking-tight transition-colors first:mt-0 ${className}`}>
                     {children}
                 </h2>
             );

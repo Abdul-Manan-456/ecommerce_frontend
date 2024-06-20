@@ -1,7 +1,6 @@
 
 "use client";
 import * as React from "react";
-import { useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import {
     Card,
@@ -20,7 +19,7 @@ interface loginAndRegisterProps {
         setFieldValue: (field: string, value: string) => void;
     }
 }
-import { Tabs, TabsContent } from "@/components/ui/tabs";
+import { TabsContent } from "@/components/ui/tabs";
 import Input from "@/components/ui/custom/Input";
 const LoginAndRegister: React.FC<loginAndRegisterProps> = ({ value, description, props }) => {
 

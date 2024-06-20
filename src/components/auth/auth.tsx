@@ -86,7 +86,6 @@ const Auth = () => {
         router.push("/dashboard/user");
       }
     })
-    // console.log("user---------", user.user.role)
 
   };
   const handleRegister = (value: User) => {

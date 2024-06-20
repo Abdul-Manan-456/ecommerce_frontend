@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/client/navbar/navbar";
 import StoreProvider from "@/lib/redux/StoreProvider";
 import { Toaster } from "@/components/ui/toaster";
+import { store } from "@/lib/redux/store";
+
 
 export const metadata: Metadata = {
   title: "Create Next App",

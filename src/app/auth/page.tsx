@@ -9,7 +9,7 @@ import Loading from "./loading"
 const Page = () => {
 
     return (
-        <div className="flex items-center justify-center bg-ghostWhite h-[92vh]">
+        <div className="container flex items-center justify-center bg-ghostWhite h-[92vh]">
             <Suspense fallback={<Loading />} >
                 <Auth />
             </Suspense>

@@ -38,7 +38,7 @@ const Page = () => {
 
 
   return (
-    isClient && <div className="p-6 w-[600px]" suppressHydrationWarning={true}>
+    isClient && <div className="p-6 container w-[600px]" suppressHydrationWarning={true}>
       <div className="flex items-center justify-between">
         <Heading as="h3">Categories</Heading>
         <AddEditCategoryDialog mode="add">

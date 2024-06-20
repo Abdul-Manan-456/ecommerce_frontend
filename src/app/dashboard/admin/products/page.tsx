@@ -19,7 +19,7 @@ const Page = () => {
 
   return (
     <Suspense fallback={<Loading />}>
-      <main className="px-8 py-4">
+      <main className="px-8 py-4 container">
         <ProductsHeader selectedProductId={selectedProductId} />
         <ProductsTable handleProductSelection={handleProductSelection} />
       </main>

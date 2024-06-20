@@ -87,7 +87,7 @@ const Search = () => {
     return () => clearTimeout(fetchSearch);
   }, [inputText]);
   return (
-    <section className="z-60 ">
+    <section className="z-60">
       <Sheet>
         <SheetTrigger onClick={handleOpenSidebar} asChild>
           <SearchIcon className="cursor-pointer" />

@@ -18,7 +18,7 @@ const Page = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="container">
       {loading ? (
         <Loading />
       ) : (

@@ -33,7 +33,7 @@ const ProductLanding: React.FC<Product> = () => {
   });
 
   return (
-    <div className="p-12">
+    <div className="container sm:p-8 p-2">
       {isLoading ? (
         <LoadingComp />
       ) : (

@@ -78,7 +78,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
   return isLoading ? (
     <LoadingComp />
   ) : (
-    <div className="p-6 flex items-center justify-center">
+    <div className="p-6 container flex items-center justify-center">
       <div className="w-1/2">
         <Heading as="h4" className="mb-4">
           Add the product

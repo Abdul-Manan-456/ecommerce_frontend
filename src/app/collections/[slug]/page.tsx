@@ -22,7 +22,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
     dispatch(fetchProducts({ category: param }));
   }, [dispatch, param]);
   return (
-    <div className="p-4 mb-8  ">
+    <div className="mb-8 container md:px-4 px-0">
       <Suspense fallback={<Loading />}>
         {/* <Text as="p" className="text-xs">
           Home / men
